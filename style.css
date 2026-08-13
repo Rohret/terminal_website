@@ -119,7 +119,7 @@ a {
 #mobileterminalText{display: none;}
 #terminal::before {
   color: #519975;
-  content: "guest@adamrohr.com~$";
+  content: "guest@adamrohr.se~$";
   width: 100%;
   margin: 0;
   right: 20%;
