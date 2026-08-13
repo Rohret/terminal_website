@@ -53,7 +53,7 @@ function enterKey(e) {
       case "cd cv":
       case "cv":
         writeLines(openpdf, "mainText");
-        OpenNewTab("attachments/CV_adamroohr.pdf");
+        OpenNewTab("attachments/CV_2026.pdf");
         break;
       case "cd banner":
       case "banner":
