@@ -6,6 +6,7 @@ var historyPlace = 0;
 var oneAtATime = 0;
 
 var i = 0;
+var currentDir = "~";
 
 initialize();
 rightTerminal();
@@ -42,54 +43,75 @@ function enterKey(e) {
         break;
       case "cd whoisadam":
       case "whoisadam":
+        currentDir = "whoisadam";
         writeLines(whoisadam, "mainText");
         writeLines(whoisadammobile, "mainText");
         break;
       case "cd email":
       case "email":
+        currentDir = "email";
         writeLines(openmail, "mainText");
         OpenNewTab("mailto:adamroohr@gmail.com");
         break;
       case "cd cv":
       case "cv":
+        currentDir = "cv";
         writeLines(openpdf, "mainText");
         OpenNewTab("attachments/CV_2026.pdf");
         break;
       case "cd banner":
       case "banner":
+        currentDir = "banner";
         writeLines(onlyBanner, "mainText");
         break;
       case "cd history":
       case "history":
+        currentDir = "history";
         writeLines(newline, "mainText");
         writeLines(history, "mainText");
         break;
       case "clear":
         document.getElementById("mainText").innerHTML = "";
+        currentDir = "~";
         break;
       case "cd social":
       case "social":
+        currentDir = "social";
         writeLines(social, "mainText");
         break;
       case "cd projects":
       case "projects":
+        currentDir = "projects";
         writeLines(projects, "mainText");
         break;
       case "cd linkedin":
       case "linkedin":
+        currentDir = "linkedin";
         OpenNewTab("https://www.linkedin.com/in/adam-r%C3%B6hr-90720ba1/");
         break;
       case "cd github":
       case "github":
+        currentDir = "github";
         OpenNewTab("https://github.com/Rohret");
         break;
       case "cd instagram":
       case "instagram":
+        currentDir = "instagram";
         OpenNewTab("https://www.instagram.com/adamrohr_/");
         break;
       case "cd facebook":
       case "facebook":
+        currentDir = "facebook";
         OpenNewTab("https://www.facebook.com/adam.rohr.94");
+        break;
+      case "pwd":
+        writeLines(["<br>", "<span>/home/guest/" + currentDir + "</span>", "<br>"], "mainText");
+        break;
+      case "whoami":
+        writeLines(whoami, "mainText");
+        break;
+      case "date":
+        writeLines(["<br>", "<span>" + new Date().toString() + "</span>", "<br>"], "mainText");
         break;
       default:
         writeLines(commandnotfound, "mainText");
